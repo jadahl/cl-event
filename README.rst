@@ -2,8 +2,10 @@
 cl-event
 ########
 
+
 Usage
 *****
+
 
 Beginning Your Code
 +++++++++++++++++++
@@ -19,10 +21,11 @@ To use this ``cl-event``, start out with creating a callback and a stream:
     (defvar s ( ... open stream ... ))
 
     ; initialize libevent
-    (event-init) 
+    (event-init)
 
-and then finish up with either explicitly calling functions from the API or
-using a convenience function instead.
+and then either explicitly calling functions from the API or using a
+convenience function instead.
+
 
 Explicit Calls
 ++++++++++++++
@@ -30,11 +33,11 @@ Explicit Calls
 .. code:: lisp
 
     ; create an instance of an event
-    (defvar e (make-instance 'event)) 
+    (defvar e (make-instance 'event))
     ; associate event with a callback and a stream
-    (event-set e s (make-flags :ev-persist t) 'my-callback s) 
+    (event-set e s (make-flags :ev-persist t) 'my-callback s)
     ; add event to libevent event-base
-    (event-add e) 
+    (event-add e)
 
 
 Objects
@@ -63,4 +66,4 @@ Finishing Up
 
     ; main loop of libevent, calls my-callback (or read-connection) as defined
     above whenever there is anything to read on the given stream
-    (event-dispatch) 
+    (event-dispatch)
