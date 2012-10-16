@@ -27,8 +27,15 @@ and then either explicitly calling functions from the API or using a
 convenience function instead.
 
 
-Explicit Calls
-++++++++++++++
+The Middle Bits
++++++++++++++++
+
+
+Option 1: Explicit Calls
+========================
+
+Here are the functions that you'll need to call in order to create an event and
+have it scheduled:
 
 .. code:: lisp
 
@@ -40,8 +47,8 @@ Explicit Calls
     (event-add e)
 
 
-Objects
-+++++++
+Option 2: Using an Object
+=========================
 
 If you would rather use the convenience function ``add-event-callback``, you
 won't need to manually instantiate an event as was illustrated in the "Explicit
